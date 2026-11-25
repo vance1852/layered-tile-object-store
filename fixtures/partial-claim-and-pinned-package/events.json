@@ -1,0 +1,219 @@
+{
+  "policy": {
+    "claims": [
+      {
+        "layer": "atlas",
+        "actor": "basin",
+        "z": 1,
+        "bounds": [
+          0,
+          0,
+          2,
+          2
+        ],
+        "priority": 1
+      },
+      {
+        "layer": "field",
+        "actor": "north",
+        "z": 2,
+        "bounds": [
+          0,
+          0,
+          1,
+          2
+        ],
+        "priority": 3
+      },
+      {
+        "layer": "incident",
+        "actor": "fielddesk",
+        "z": 2,
+        "bounds": [
+          1,
+          0,
+          2,
+          1
+        ],
+        "priority": 9
+      }
+    ],
+    "capacity_bytes": 96
+  },
+  "objects": {
+    "base.bin": {
+      "bytes": 16,
+      "sha256": "5fa0bad7bfc15d3f12a48b13bb6c3f93fa7d91a6bce0bdda72b3a224119ef942"
+    },
+    "north.bin": {
+      "bytes": 16,
+      "sha256": "d1115c64bf42db91439e1dd98257da6a6239fb150701bd10309b8e14ad4eef04"
+    },
+    "road.bin": {
+      "bytes": 16,
+      "sha256": "c3aaa479db71d909d2e6f62ca5a9d217a667fa0f319ade48735cf8c61ff94bdf"
+    },
+    "outside.bin": {
+      "bytes": 16,
+      "sha256": "539b277a38895ea166a583db93c259e72fbb4e2715756afcf77065e391e3fbc1"
+    }
+  },
+  "events": [
+    {
+      "at": 0,
+      "action": "layer",
+      "layer": "atlas",
+      "actor": "basin",
+      "base": 0,
+      "revision": 1,
+      "tiles": [
+        [
+          1,
+          0,
+          0,
+          "content",
+          "base.bin"
+        ]
+      ]
+    },
+    {
+      "at": 1,
+      "action": "layer",
+      "layer": "field",
+      "actor": "north",
+      "base": 0,
+      "revision": 1,
+      "tiles": [
+        [
+          2,
+          0,
+          0,
+          "content",
+          "north.bin"
+        ],
+        [
+          2,
+          0,
+          1,
+          "expected",
+          null
+        ],
+        [
+          2,
+          1,
+          1,
+          "content",
+          "outside.bin"
+        ]
+      ]
+    },
+    {
+      "at": 2,
+      "action": "layer",
+      "layer": "incident",
+      "actor": "fielddesk",
+      "base": 0,
+      "revision": 1,
+      "tiles": [
+        [
+          2,
+          1,
+          0,
+          "content",
+          "road.bin"
+        ]
+      ]
+    },
+    {
+      "at": 3,
+      "action": "pickup",
+      "id": "p9",
+      "extent": [
+        1,
+        0,
+        0
+      ],
+      "levels": [
+        1,
+        2
+      ],
+      "until": 25
+    },
+    {
+      "at": 4,
+      "action": "fetch",
+      "id": "p9",
+      "tile": [
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "at": 5,
+      "action": "layer",
+      "layer": "incident",
+      "actor": "fielddesk",
+      "base": 1,
+      "revision": 2,
+      "tiles": [
+        [
+          2,
+          1,
+          0,
+          "empty",
+          null
+        ]
+      ]
+    },
+    {
+      "at": 6,
+      "action": "read",
+      "tile": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "at": 7,
+      "action": "read",
+      "tile": [
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "at": 8,
+      "action": "revoke_claim",
+      "layer": "field",
+      "actor": "north"
+    },
+    {
+      "at": 9,
+      "action": "fetch",
+      "id": "p9",
+      "tile": [
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "at": 10,
+      "action": "fetch",
+      "id": "p9",
+      "tile": [
+        2,
+        0,
+        1
+      ]
+    },
+    {
+      "at": 13,
+      "action": "query_usage"
+    }
+  ],
+  "packets": []
+}

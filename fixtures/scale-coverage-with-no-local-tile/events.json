@@ -1,0 +1,105 @@
+{
+  "policy": {
+    "claims": [
+      {
+        "layer": "atlas",
+        "actor": "basin",
+        "z": 1,
+        "bounds": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "priority": 1
+      },
+      {
+        "layer": "higher",
+        "actor": "east",
+        "z": 2,
+        "bounds": [
+          1,
+          1,
+          2,
+          2
+        ],
+        "priority": 5
+      }
+    ],
+    "capacity_bytes": 56
+  },
+  "objects": {
+    "base.bin": {
+      "bytes": 16,
+      "sha256": "5de8c7a5ffabb981e704c7cedb2edae92425a4a1954c6a3cf017cd0011625945"
+    },
+    "other.bin": {
+      "bytes": 16,
+      "sha256": "0866a6eaea5cb085e4cf6ef19296bf19647552dd5f96f1e530db3ae61837efe7"
+    }
+  },
+  "events": [
+    {
+      "at": 0,
+      "action": "layer",
+      "layer": "atlas",
+      "actor": "basin",
+      "base": 0,
+      "revision": 1,
+      "tiles": [
+        [
+          1,
+          0,
+          0,
+          "content",
+          "base.bin"
+        ]
+      ]
+    },
+    {
+      "at": 1,
+      "action": "layer",
+      "layer": "higher",
+      "actor": "east",
+      "base": 0,
+      "revision": 1,
+      "tiles": [
+        [
+          2,
+          1,
+          1,
+          "empty",
+          null
+        ]
+      ]
+    },
+    {
+      "at": 2,
+      "action": "read",
+      "tile": [
+        2,
+        0,
+        1
+      ]
+    },
+    {
+      "at": 3,
+      "action": "read",
+      "tile": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "at": 4,
+      "action": "read",
+      "tile": [
+        1,
+        0,
+        0
+      ]
+    }
+  ],
+  "packets": []
+}
